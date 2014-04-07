@@ -1,0 +1,16 @@
+Babbage is a simple and extensible open source tool for manipulating data.
+
+Use it:
+- https://babbage.tomscript.com
+
+Code:
+- https://github.com/tomscript/babbage
+
+Discuss:
+- https://groups.google.com/forum/#!forum/babbage-discuss
+
+Install your own instance:
+1. Create an App Engine project, note the application name.
+2. git clone https://github.com/tomscript/babbage
+3. Update app.yaml with your application name.
+4. $ appcfg update <your application name>

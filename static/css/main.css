@@ -1,0 +1,249 @@
+/**
+ * @license
+ * Copyright 2014 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//ssl.gstatic.com/fonts/roboto/v8/grlryt2bdKIyfMSOhzd1eA.woff);
+}
+
+body {
+  font-family: Roboto, Arial,sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+section span {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+header {
+  background: #f5f5f5;
+  border-bottom: 1px solid #e5e5e5;
+  height: 47px;
+  padding: 10px 20px 10px 20px;
+  display: flex;
+  flex: 1 100%;
+}
+
+#help-button {
+  float: right;
+  margin: auto;
+  display: flex;
+  cursor: pointer;
+}
+#help-button span {
+  margin: auto;
+}
+
+.pj-dialog-bg {
+  background: rgb(58, 57, 57);
+  left: 0px;
+  position: absolute;
+  top: 0px;
+}
+
+.pj-dialog {
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px;
+  color: rgb(34, 34, 34);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  height: auto;
+  max-width: 70%;
+  opacity: 1;
+  outline: rgba(0, 0, 0, 0.2) solid 1px;
+  overflow: hidden;
+  padding: 30px 42px;
+  text-align: left;
+  transition: all 0.218s;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px;
+  -webkit-transform: scale(1.05);
+  -webkit-transition: all 0.218s;
+  z-index: 1;
+  margin: auto;
+  position: absolute;
+  height: 200px;
+  width: 500px;
+}
+
+.plugin-list li {
+  cursor: pointer;
+  margin: 10px 0 10px 0;
+  margin-bottom: 8px;
+  padding-left: 25px;
+  font-family: Arial;
+}
+
+header h1 {
+  font-family: "open sans",arial,sans-serif;
+  font-weight: 300;
+  width: 300px;
+  flex: 1 1 auto;
+  margin: auto;
+}
+
+header p {
+  color: gray !important;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+#top-bar {
+  background-color: white;
+  border-bottom: 1px solid darkGray;
+  float: left;
+  height: 42px;
+  width: 100%;
+}
+
+nav {
+  padding: 0 0 10px 10px;
+  border-right: solid 1px lightgray;
+  flex: 1 1;
+  max-width: 187px;
+}
+
+.section-header {
+  margin: auto 0;
+  padding: 10px 0 10px 0;
+  display: flex;
+  flex-flow: row;
+}
+
+.text-input {
+  background-clip: padding-box;
+  background-color: white;
+  border-width: 1px 1px 1px 6px;
+  border: solid transparent;
+  box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
+  color: darkGray;
+  min-height: 28px;
+  padding: 5px;
+}
+
+section {
+  padding: 0 20px 20px 20px;
+  height: 100vh;
+  background-color: rgb(248, 248, 248);
+  flex: 2;
+  display: flex;
+  flex-flow: column;
+}
+
+.input-header {
+  color: #dd4b39;
+  margin: auto;
+  flex: 1;
+}
+
+h1 {
+  color: #666;
+}
+
+#selected-plugin-list li {
+  background-image: url('../images/close.gif');
+  background-position: 11px;
+  background-repeat: no-repeat;
+  background-size: 10px;
+}
+
+nav strong {
+  color: #d14836;
+  font-size: 10px;
+}
+
+#available-plugins input {
+  display: none;
+}
+
+.options {
+  border: solid 1px lightgray;
+  color: black;
+  font-size: 12px;
+  margin: 0 5px 0 10px;
+  padding: 1px;
+  text-align: center;
+  width: 30px;
+}
+
+.plugin-list {
+  color: #666;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plugin-list li:hover {
+  color: darkblue;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+}
+
+nav h3 {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+nav input[type=button] {
+  margin: 10px 0 10px 0;
+}
+nav input[type=button]:first-of-type {
+  margin: 0 3px 0 0;
+}
+nav input[type=button], #help-button, .goog-buttonset-default {
+  background-color: #d14836;
+  background-image: -webkit-linear-gradient(top,#dd4b39,#d14836);
+  border-radius: 2px;
+  border: 1px solid transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: bold;
+  height: 26px;
+  text-align: center;
+  text-shadow: 0px 1px rgba(0,0,0,0.1);
+  text-transform: uppercase;
+  min-width: 87px;
+}
+
+textarea {
+  border-collapse: separate;
+  border-spacing: 2px;
+  border: solid 1px darkgray;
+  padding: 10px;
+  width: 95%;
+  font-family: Courier;
+  font-size: 14px;
+  height: 30%;
+  flex: 1;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BABBAGE</title>
+    <link href="static/css/main.css" rel="stylesheet">
+    <script src='static/js/main-compiled.js'></script>
+  </head>
+  <body onload="var b = new babbage(); b.init();"
+        onunload="b.dispose();">
+    <header>
+      <h1>BABBAGE</h1>
+      <div id="help-button">
+        <span>Help</span>
+      </div>
+    </header>
+    <nav>
+      <input id="clear-button"
+             type="button"
+             value="Clear All">
+      <input id="submit-button"
+             type="button"
+             value="Run">
+      <h3 id="selected-mod-list-header"
+          style="display:none;">Selected Plugins</h3>
+      <ul id="selected-plugin-list"
+          class="plugin-list"></ul>
+      <h3>Plugins</h3>
+      <ul id="available-plugins"
+          class="plugin-list"></ul>
+    </nav>
+    <section>
+      <div class="section-header">
+        <span class="input-header">Input</span>
+      </div>
+      <textarea id="input"
+                class="textareas"
+                name="input"></textarea>
+      <div class="section-header">
+        <span class="input-header">Output</span>
+      </div>
+        <textarea id="output"
+                  class="textareas"></textarea>
+    </section>
+  </body>
+</html>
