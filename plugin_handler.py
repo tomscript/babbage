@@ -23,6 +23,7 @@ from plugins import hex2ascii
 from plugins import replace
 from plugins import url
 from plugins import xor
+from plugins import rot13
 
 AVAILABLE_PLUGINS = (base_64.Base64Decode(),
                      base_64.Base64Encode(),
@@ -32,7 +33,9 @@ AVAILABLE_PLUGINS = (base_64.Base64Decode(),
                      fromcharcode.FromCharCode(),
                      replace.Replace(),
                      xor.Xor(),
-                     xor.IncrementalXor())
+                     xor.IncrementalXor(),
+                     rot13.Rot13Decode(),
+                     rot13.Rot13Encode())
 
 
 class Error(Exception):
