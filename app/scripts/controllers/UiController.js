@@ -83,8 +83,8 @@ babbage.controllers.UiCtrl = function(
 
   goog.exportProperty($scope, 'ids', babbage.controllers.UiCtrl.IDS_);
 
-  // goog.exportProperty($scope, 'listPlugins',
-  //     goog.bind(this.listPlugins, this));
+   goog.exportProperty($scope, 'listPlugins',
+       goog.bind(this.listPlugins, this));
 
   goog.exportProperty($scope, 'removePlugin',
       goog.bind(this.removePlugin, this));
