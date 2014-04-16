@@ -1,0 +1,72 @@
+
+<header>
+  <h1>BABBAGE</h1>
+  </div>
+  <div id="help-button"
+       class="button top-button"
+       ng-click="helpButtonClicked()">
+    <span>Help</span>
+  </div>
+</header>
+
+<nav>
+  <div id="ribbon">
+    <div id="button-holder">
+      <input id="submit-button"
+             type="button"
+             value="Convert"
+             class="button"
+             ng-click="submitButtonClicked()">
+      <input type="button"
+             id="upload-button"
+             class="button small-button button-options"
+             value="&nbsp;"
+             ng-click="showFileUpload = true">
+      <input id="clear-button"
+             type="button"
+             class="button small-button button-options"
+             value="X"
+             ng-click="clearButtonClicked()">
+      </div>
+  </div>
+
+  <selected selected-plugins="selectedPlugins"></selected>
+
+  <h3>Plugins</h3>
+
+  <available></available>
+</nav>
+
+<section>
+  <div class="section-header">
+    <span class="input-header">Input</span>
+  </div>
+
+  <div id="file-upload-holder"
+       ng-hide="!showFileUpload">
+    <fileupload class="file-upload-inside"></fileupload>
+
+  </div>
+
+  <textarea id="input"
+            class="textareas"
+            name="input"
+            ng-model="inputTextArea"
+            ng-hide="showFileUpload">
+  </textarea>
+  <div class="section-header"
+       id="output-header">
+
+    <outputoptions id="output-options-holder"></outputoptions>
+
+    <span class="input-header"
+          ng-hide="outputTextArea">Output</span>
+  </div>
+
+  <textarea id="output"
+            class="textareas"
+            tabindex="0"
+            disabled
+            ng-model="outputTextArea">
+  </textarea>
+</section>

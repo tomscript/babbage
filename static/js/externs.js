@@ -1,1 +1,0 @@
-function ga(text){};
