@@ -1,0 +1,41 @@
+application: babbage-stable
+version: 2
+runtime: python27
+api_version: 1
+threadsafe: no
+
+inbound_services:
+- xmpp_subscribe
+
+handlers:
+- url: /scripts
+  static_dir: scripts
+
+- url: /styles
+  static_dir: styles
+
+- url: /images
+  static_dir: images
+
+- url: /closure-library
+  static_dir: closure-library
+
+- url: /res
+  static_dir: res
+
+- url: /views
+  static_dir: views
+
+- url: /
+  static_files: index.html
+  upload: index\.html
+
+- url: /convert
+  script: main.app
+
+- url: /listplugins
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: latest
