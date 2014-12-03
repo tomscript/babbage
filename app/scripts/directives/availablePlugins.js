@@ -35,7 +35,7 @@ babbage.directives.AvailablePlugins = function() {
     templateUrl: 'views/availablePlugins.html',
     controller: 'babbage.controllers.UiCtrl',
     link: function(scope, elem, attrs) {
-      scope['listPlugins']();
+      scope.listPlugins();
     }
   };
 };
