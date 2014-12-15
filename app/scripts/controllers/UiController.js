@@ -216,7 +216,7 @@ babbage.controllers.UiCtrl.prototype.submitButtonClicked = function() {
 
   // Are we reading a file or the textarea?
   var inputValue = this.scope_['inputFile'] ? this.scope_['inputFile'] :
-      goog.crypt.base64.encodeString(this.scope_['inputTextArea']);
+      this.scope_['inputTextArea'];
 
   var postData = {
     'input': inputValue,
@@ -228,9 +228,10 @@ babbage.controllers.UiCtrl.prototype.submitButtonClicked = function() {
       return;
     }
     // Save Base64 version in case we want to download.
-    this.rootScope_['outputBase64'] = output.success;
-    this.scope_['outputTextArea'] = goog.crypt.base64.decodeString(
+    this.rootScope_['outputBase64'] = goog.crypt.base64.encodeString(
         output.success);
+
+    this.scope_['outputTextArea'] = output.success;
 
     // Hacky highlight.
     setTimeout(goog.bind(function() {
@@ -306,7 +307,7 @@ babbage.controllers.UiCtrl.prototype.fileUploadChanged_ = function(evt) {
  * @private
  */
 babbage.controllers.UiCtrl.prototype.fileUploadCompleted_ = function(evt) {
-  this.scope_['inputFile'] = goog.crypt.base64.encodeString(evt.target.result);
+  this.scope_['inputFile'] = encodeURIComponent(evt.target.result);
   this.scope_.$digest();
 };
 
