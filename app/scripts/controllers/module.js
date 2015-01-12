@@ -33,8 +33,7 @@ babbage.Controllers.MODULE_NAME = 'bababge.controllers';
 
 /** @private */
 babbage.Controllers.module_ = angular.module(
-    babbage.Controllers.MODULE_NAME,
-    []);
+    babbage.Controllers.MODULE_NAME, []);
 
 
 /**

@@ -25,7 +25,6 @@
 goog.provide('babbage.App');
 
 goog.require('babbage.Controllers');
-goog.require('babbage.Directives');
 goog.require('babbage.Services');
 
 
@@ -34,7 +33,6 @@ goog.require('babbage.Services');
  */
 babbage.App = angular.module('babbage', [
   babbage.Controllers.MODULE_NAME,
-  babbage.Directives.MODULE_NAME,
   babbage.Services.MODULE_NAME,
   'ngRoute'
 ]);
@@ -45,9 +43,11 @@ babbage.App = angular.module('babbage', [
  */
 babbage.App.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
     $routeProvider
         .when('/', {
-          templateUrl: 'views/main.html'
+          templateUrl: 'views/main.html',
+          controller: 'babbage.controllers.UiCtrl'
         })
         .otherwise({
           redirectTo: '/'

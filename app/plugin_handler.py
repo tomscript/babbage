@@ -48,12 +48,13 @@ def ListPlugins():
   Returns:
     A list of dictionaries containing the plugin 'name', 'options', and
     'description'.
-  """
+  """  
   available_plugins = []
   for current_plugin in AVAILABLE_PLUGINS:
     available_plugins.append({
         'name': current_plugin.name,
-        'options': current_plugin.options,
+        'optionsDesc': current_plugin.options,
+        'options': ['' for x in xrange(len(current_plugin.options))],
         'description': current_plugin.description})
   return available_plugins
 
@@ -68,6 +69,8 @@ def ProcessPlugins(data, plugins):
   Returns:
     Dict of decoded data containing a success or failure.
   """
+  import logging
+  logging.info('inside ProcessPlugins: ' + data)
   for plugin in plugins:
     for current_plugin in AVAILABLE_PLUGINS:
       if plugin['name'] == current_plugin.name:
