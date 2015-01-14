@@ -5,9 +5,8 @@
     <title>Babbage</title>
     <meta name="description" content="">
     <!-- build:css({.tmp,app}) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">    
+    <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    
     <link rel="shortcut icon" href="images/favicon.ico">
     <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet"
           type="text/css">
@@ -16,18 +15,10 @@
   <body ng-app="babbage" ng-cloak ng-controller="babbage.controllers.UiCtrl">
   <header>
     <div class="logo" ng-click="showSideBar = !showSideBar">
-      <img src="//ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/2x/ic_menu_wht_2x.png">
+      <img src="/images/white-menu.png">
     </div>
-    <h1>Babbage</h1>      
-  </header>      
-  boo
-  <link rel="import" href="res/polymer/polymer.html">
-  <polymer-element name="my-element" noscript>
-    <template>
-      <span>Hello from <b>my-element</b>. This is my Shadow DOM.</span>
-    </template>
-  </polymer-element>
-  ya
+    <h1>Babbage</h1>
+  </header>
   <div id="babbage" ng-view></div>
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
@@ -36,8 +27,6 @@
   <script src="res/json3/lib/json3.min.js"></script>
   <script src="res/angular-resource/angular-resource.js"></script>
   <script src="res/angular-route/angular-route.js"></script>
-  <script src="res/webcomponentsjs/webcomponents.js"></script>
-  <script src="res/polymer/polymer.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:js({.tmp,app}) scripts/scripts.js -->

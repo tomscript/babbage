@@ -28,7 +28,7 @@ body {
   font-family: 'Roboto';
   font-size: 13px;
   height: 100%;
-  margin: 0;  
+  margin: 0;
   padding: 0;
 }
 
@@ -48,7 +48,7 @@ nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 100%;  
+  height: 100%;
   margin: auto;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -74,13 +74,13 @@ nav {
 
 @media all and (min-width: 250px) and (max-width: 400px) {
 
-  #babbage {  
+  #babbage {
     width: 100%;
     flex-direction: column;
   }
 
   nav {
-    left: 65%;    
+    left: 65%;
   }
 
   .nav-button {
@@ -88,13 +88,13 @@ nav {
   }
 
   section {
-    max-width: 100% !important;    
+    max-width: 100% !important;
   }
 
 }
 
 .no-output {
-  min-height: 80% !important;  
+  min-height: 80% !important;
 }
 
 .no-output-nav {
@@ -124,11 +124,11 @@ nav {
   margin: auto;
 }
 
-.side-bar {  
+.side-bar {
   background-color: #fff;
   box-shadow: 0 0 4px rgba(0,0,0,.14),2px 4px 8px rgba(0,0,0,.28);
-  left: 0px;  
-  height: 100%;  
+  left: 0px;
+  height: 100%;
   margin: 57px 0 0 0;
   overflow-x: hidden;
   overflow-y: auto;
@@ -150,7 +150,7 @@ nav {
   cursor: pointer;
   display: block;
   line-height: 40px;
-  padding: 4px 0 4px 24px;  
+  padding: 4px 0 4px 24px;
   text-decoration: initial;
 }
 
@@ -159,7 +159,7 @@ nav {
 }
 
 header {
-  background: #F44336;
+  background: #00bcd4;
   box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
   display: flex;
   flex: 1 100%;
@@ -179,7 +179,7 @@ header h1 {
   -webkit-font-smoothing: antialiased;
 }
 
-.button-text { 
+.button-text {
   margin: auto;
   color: white;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -190,49 +190,54 @@ header h1 {
 .strong-button {
   background-color: #f7ae4f;
   border: 1px solid #f7ae4f;
-  border-radius: 3px;  
+  border-radius: 3px;
   color: white;
   font-weight: bold;
   font-size: 13px;
-  padding: 5px 20px;  
+  padding: 5px 20px;
 }
 
 .nav-button {
-  background-color: #303f9f;
+  background-color: #4285f4;
   border-radius: 56px;
   bottom: 8px;
-  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);  
+  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+  cursor: pointer;
   display: inline-flex;
   height: 56px;
   left: 77%;
   margin: auto 20px auto 0;
   transition: .1s;
-  width: 56px;  
+  width: 56px;
 }
 
-.nav-primary-button { 
+.nav-primary-button {
   border-radius: 3px;
   height: 48px;
-  margin: auto;
+  left: initial;
+  margin: 0;
+  position: absolute;
+  right: 9px;
+  top: 12px;
   width: 111px;
 }
 
 .nav-button-img {
   height: 24px;
-  margin: auto;  
+  margin: auto;
   width: 24px;
 }
 
 .nav-button:hover {
-  background-color: #3f51b5;
+  opacity: .7;
 }
 
 .nav-button-secondary {
-  background-color: #F44336;
+  background-color: #00bcd4;
 }
 
 .nav-button-secondary:hover {
-  background-color: #D32F2F;  
+  opacity: .7;
 }
 
 .dark-button-text {
@@ -282,7 +287,7 @@ header p {
   width: 100%;
 }
 
-.plugins {  
+.plugins {
   flex: 1 1;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   max-width: 185px;
@@ -295,6 +300,7 @@ header p {
   display: flex;
   height: 38px;
   padding: 10px 0 10px 0;
+  position: relative;
 }
 
 .text-input {
@@ -332,7 +338,7 @@ section {
   position: absolute;
   opacity: .5;
   top: 0px;
-  z-index: 8;  
+  z-index: 8;
 }
 
 .popup {
@@ -356,6 +362,7 @@ section {
 
 .input-header {
   color: #f8f8f8;
+  flex: 1 1 auto;
   font-size: 22px;
   margin: auto 0 auto 15px;
 }
@@ -366,11 +373,12 @@ h1 {
 
 .text-box {
   background-color: #fff;
-  box-shadow: 1px 0 2px rgba(0,0,0,0),3px 3px 12px rgba(0,0,0,0.18);  
+  box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
   margin: 20px 0 30px 0;
   min-height: 30%;
   display: flex;
   flex-direction: column;
+  position: relative;
   transition: .1s;
 }
 
@@ -391,12 +399,12 @@ h1 {
   margin: 0 5px 0 10px;
   padding: 4px;
   text-align: center;
-  width: 30px;  
+  width: 30px;
 }
 
 .file-upload-holder {
   display: flex;
-  position: relative;  
+  position: relative;
 }
 
 .file-upload-inside {
@@ -426,7 +434,7 @@ h1 {
 }
 
 .plugins h3, .popup h3 {
-  color: #db4437;
+  color: #00bcd4;
   font-size: 18px;
   font-weight: normal;
   margin: 10px 0 0 13px;

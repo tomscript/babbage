@@ -18,6 +18,7 @@ limitations under the License.
 __author__ = 'tomfitzgerald@google.com (Tom Fitzgerald)'
 
 from plugins import base_64
+from plugins import css
 from plugins import fromcharcode
 from plugins import hex2ascii
 from plugins import replace
@@ -27,6 +28,7 @@ from plugins import xor
 
 AVAILABLE_PLUGINS = (base_64.Base64Decode(),
                      base_64.Base64Encode(),
+                     css.CSS(),
                      hex2ascii.Hex2Ascii(),
                      url.UrlEncode(),
                      url.UrlDecode(),
@@ -48,7 +50,7 @@ def ListPlugins():
   Returns:
     A list of dictionaries containing the plugin 'name', 'options', and
     'description'.
-  """  
+  """
   available_plugins = []
   for current_plugin in AVAILABLE_PLUGINS:
     available_plugins.append({
