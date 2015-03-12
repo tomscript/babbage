@@ -1,7 +1,7 @@
 Babbage is a simple and extensible open source tool for manipulating data.
 
 ### Use it: ###
-- https://babbage.tomscript.com
+- https://babbage-stable.appspot.com
 
 ### Code: ###
 - https://github.com/tomscript/babbage
