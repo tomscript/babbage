@@ -373,6 +373,7 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
+    'closureBuilder',
     'concat',
     'ngmin',
     'copy:dist',
@@ -381,9 +382,8 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'htmlmin',
-    'gjslint',
-    'closureBuilder'
+    'htmlmin'
+    // 'gjslint',    
   ]);
 
   grunt.registerTask('default', [

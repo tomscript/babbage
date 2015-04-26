@@ -37,7 +37,7 @@
 <section>
   <div class="text-box" ng-class="{'no-output': !outputTextArea}">
     <div class="nav-button nav-primary-button" ng-click="submitButtonClicked()"
-         ng-show="inputText">
+         ng-show="inputText || inputFile">
       <span class="button-text light-button-text">convert</span>
     </div>
     <div class="file-upload-holder" ng-hide="!showFileUpload">

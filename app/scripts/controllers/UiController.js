@@ -127,11 +127,16 @@ babbage.controllers.UiCtrl.prototype.submitButtonClicked = function() {
       alert(output['failure']);
       return;
     }
-    // Save Base64 version in case we want to download.
-    this.rootScope_['outputBase64'] = goog.crypt.base64.encodeString(
-        output.success);
 
-    this.scope_['outputTextArea'] = output.success;
+    if (this.scope_['inputFile']) {
+      this.scope_['outputTextArea'] = goog.crypt.base64.decodeString(
+        output.success);
+      this.rootScope_['outputBase64'] = output.success;
+    } else {
+      this.scope_['outputTextArea'] = output.success;
+      this.rootScope_['outputBase64'] = goog.crypt.base64.encodeString(
+        output.success);
+    }
 
     // Hacky highlight.
     setTimeout(goog.bind(function() {

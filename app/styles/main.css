@@ -115,10 +115,6 @@ nav {
   opacity: 1;
 }
 
-.logo:active {
-  background-color: darkred;
-}
-
 .logo > span {
   color: white;
   margin: auto;
@@ -159,7 +155,7 @@ nav {
 }
 
 header {
-  background: #00bcd4;
+  background: #db4437;
   box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
   display: flex;
   flex: 1 100%;
@@ -197,8 +193,7 @@ header h1 {
   padding: 5px 20px;
 }
 
-.nav-button {
-  background-color: #4285f4;
+.nav-button {  
   border-radius: 56px;
   bottom: 8px;
   box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
@@ -212,6 +207,7 @@ header h1 {
 }
 
 .nav-primary-button {
+  background-color: #db4437;
   border-radius: 3px;
   height: 48px;
   left: initial;
@@ -220,6 +216,7 @@ header h1 {
   right: 9px;
   top: 12px;
   width: 111px;
+  z-index: 10;
 }
 
 .nav-button-img {
@@ -228,16 +225,8 @@ header h1 {
   width: 24px;
 }
 
-.nav-button:hover {
-  opacity: .7;
-}
-
 .nav-button-secondary {
-  background-color: #00bcd4;
-}
-
-.nav-button-secondary:hover {
-  opacity: .7;
+  background-color: #db4437;
 }
 
 .dark-button-text {
@@ -434,7 +423,7 @@ h1 {
 }
 
 .plugins h3, .popup h3 {
-  color: #00bcd4;
+  color: #db4437;
   font-size: 18px;
   font-weight: normal;
   margin: 10px 0 0 13px;

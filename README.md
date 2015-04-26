@@ -18,6 +18,10 @@ Babbage is a simple and extensible open source tool for manipulating data.
 
 If you plan to build and modify Babbage you'll want to know a bit more
 
+```
+npm install
+```
+
 I use grunt to build and do all sorts of cool things. So you'll want to add your App Engine app ID to app/app.yaml. Then do:
 
 ```
@@ -41,4 +45,8 @@ protractor test/protractor/conf.js
 ```
 
 View my latest tests and experimental things at:
+<<<<<<< Updated upstream
 https://babbage-unstable.appspot.com/#/
+=======
+https://babbage-unstable.appspot.com
+>>>>>>> Stashed changes

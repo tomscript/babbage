@@ -1,2 +1,5 @@
 *.pyc
 .tmp
+node_modules/
+app/scripts/*.min.js
+dist/
