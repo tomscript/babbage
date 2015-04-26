@@ -44,9 +44,6 @@ Run tests:
 protractor test/protractor/conf.js
 ```
 
-View my latest tests and experimental things at:
-<<<<<<< Updated upstream
-https://babbage-unstable.appspot.com/#/
+View latest tests and experimental things at:
 =======
 https://babbage-unstable.appspot.com
->>>>>>> Stashed changes
