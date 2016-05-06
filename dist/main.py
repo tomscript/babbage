@@ -35,25 +35,22 @@ def Process(input_text, plugins):
 
   Returns:
     Dict of decoded data containing a success or failure.
-  """
-  try:
-    response = base64.b64encode(
-      plugin_handler.ProcessPlugins(input_text, plugins))
-  except plugin_handler.Error as e:
+  """  
+  try:                    
+    response = plugin_handler.ProcessPlugins(input_text.encode('utf-8'), plugins)    
+  except plugin_handler.Error as e:    
     return json.dumps({'failure': str(e)})
-  try:
-    return json.dumps({'success': response})
-  except UnicodeDecodeError as e:
-    return json.dumps({'success': response.decode('utf-8', 'replace')})
-
+  return json.dumps({'success': response})
+  
 
 class MainPoster(webapp2.RequestHandler):
   """Data was posted so we must be converting data. Pass to plugins."""
 
   def post(self):
     response = json.loads(self.request.body)
-    input = base64.b64decode(response['input'])
-    self.response.out.write(Process(input, response['plugins']))
+    if response.get('input') is None:
+      return            
+    self.response.out.write(Process(response['input'], response['plugins']))
 
 
 class ListPlugins(webapp2.RequestHandler):

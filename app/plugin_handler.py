@@ -71,8 +71,6 @@ def ProcessPlugins(data, plugins):
   Returns:
     Dict of decoded data containing a success or failure.
   """
-  import logging
-  logging.info('inside ProcessPlugins: ' + data)
   for plugin in plugins:
     for current_plugin in AVAILABLE_PLUGINS:
       if plugin['name'] == current_plugin.name:

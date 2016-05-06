@@ -111,6 +111,10 @@ nav {
   opacity: .6;
 }
 
+.logo > img {
+  width: 24px;
+}
+
 .logo:hover {
   opacity: 1;
 }
