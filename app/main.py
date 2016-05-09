@@ -40,7 +40,7 @@ def Process(input_text, plugins):
     response = plugin_handler.ProcessPlugins(input_text.encode('utf-8'), plugins)    
   except plugin_handler.Error as e:    
     return json.dumps({'failure': str(e)})
-  return json.dumps({'success': response})
+  return json.dumps({'success': response}, ensure_ascii=False)
   
 
 class MainPoster(webapp2.RequestHandler):
