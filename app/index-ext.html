@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Babbage</title>
+    <meta name="description" content="">
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet"
+          type="text/css">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+  </head>
+  <body ng-app="babbage" ng-cloak ng-controller="babbage.controllers.UiCtrl">
+  <header>
+    <div class="logo" ng-click="showSideBar = !showSideBar">
+      <img src="/images/white-menu.png">
+    </div>
+    <h1>Babbage</h1>
+    <script>
+    var GLOBAL_data = '{{ data }}';
+    </script>
+  </header>
+  <div id="babbage" ng-view></div>
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="res/es5-shim/es5-shim.js"></script>
+  <script src="res/angular/angular.js"></script>
+  <script src="res/json3/lib/json3.min.js"></script>
+  <script src="res/angular-resource/angular-resource.js"></script>
+  <script src="res/angular-route/angular-route.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/babbage.min.js"></script>
+  <!-- endbuild -->
+</body>
+</html>
