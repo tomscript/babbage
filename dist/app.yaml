@@ -1,5 +1,5 @@
-application: babbage-stable
-version: 4
+application: babbage-unstable
+version: cors
 runtime: python27
 api_version: 1
 threadsafe: no
@@ -36,6 +36,12 @@ handlers:
 - url: /listplugins
   script: main.app
 
+- url: /send_blob
+  script: main.app
+
 libraries:
 - name: webapp2
+  version: latest
+
+- name: jinja2
   version: latest

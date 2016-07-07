@@ -84,6 +84,8 @@ babbage.controllers.UiCtrl.prototype.init = function() {
   this.outputTextEl_ = goog.dom.getElementByClass('output-textarea');
   this.fileUploadInputEl_ = goog.dom.getElementByClass('file-upload-input');
   this.createUploadListener();
+  if (!GLOBAL_data) return;
+  this.scope_['inputText'] = goog.crypt.base64.decodeString(GLOBAL_data);
 };
 
 

@@ -19,11 +19,20 @@ __author__ = 'tomfitzgerald@google.com (Tom Fitzgerald)'
 
 import base64
 import json
+import os
 import urllib
 
+import jinja2
 import webapp2
 
 import plugin_handler
+
+JINJA_ENVIRONMENT = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True)
+
+WHITELISTED_ORIGINS = ('http://localhost:9000')
 
 
 def Process(input_text, plugins):
@@ -61,7 +70,29 @@ class ListPlugins(webapp2.RequestHandler):
     self.response.out.write(json.dumps(plugin_handler.ListPlugins()))
 
 
+class SendBlob(webapp2.RequestHandler):
+  """External data sent via POST."""
+
+  def get(self):
+    """Responds to GET requests."""
+    template = JINJA_ENVIRONMENT.get_template('index-ext.html')
+    self.response.write(template.render())
+
+  def post(self):
+    """Responds to POST requests."""
+    origin = self.request.headers.get('Origin', '')
+    if not origin in WHITELISTED_ORIGINS:
+      return
+    template_values = {
+      'data': base64.b64encode(self.request.get('data', ''))
+    }
+    self.response.headers.add_header('Access-Control-Allow-Origin', origin)
+    self.response.headers.add_header('Access-Control-Allow-Credentials', 'true')
+    template = JINJA_ENVIRONMENT.get_template('index-ext.html')
+    self.response.write(template.render(template_values))
+
 app = webapp2.WSGIApplication([
     ('/convert', MainPoster),
-    ('/listplugins', ListPlugins)
+    ('/listplugins', ListPlugins),
+    ('/send_blob', SendBlob)
     ], debug=False)
