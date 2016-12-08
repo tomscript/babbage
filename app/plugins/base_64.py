@@ -48,13 +48,14 @@ class Base64Decode(object):
     self.options = []
 
   def Process(self, incoming_data, unused_options):
-    """Simple base64 decode.
+    """Simple base64 decode, accepting strings with omitted padding.
 
     Args:
-      incoming_data: String of data to process.
+      incoming_data: String of data to process, with or without padding.
       unused_options: Not used.
 
     Returns:
       Base64 decoded string.
     """
-    return base64.b64decode(incoming_data)
+    missing_padding = 4 - len(incoming_data) % 4
+    return base64.b64decode(incoming_data + '=' * missing_padding)
