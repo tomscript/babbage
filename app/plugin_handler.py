@@ -23,6 +23,7 @@ from plugins import fromcharcode
 from plugins import hex2ascii
 from plugins import replace
 from plugins import rot13
+from plugins import strrev
 from plugins import url
 from plugins import xor
 
@@ -36,6 +37,7 @@ AVAILABLE_PLUGINS = (base_64.Base64Decode(),
                      replace.Replace(),
                      rot13.Rot13Decode(),
                      rot13.Rot13Encode(),
+                     strrev.StrRev(),
                      xor.Xor(),
                      xor.IncrementalXor())
 

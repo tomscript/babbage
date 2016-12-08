@@ -45,3 +45,6 @@ libraries:
 
 - name: jinja2
   version: latest
+
+env_variables:
+  WHITELISTED_ORIGINS: r'^(http://localhost:8082)$'
