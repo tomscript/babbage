@@ -1,5 +1,5 @@
-application: babbage-unstable
-version: 2
+application: pearljam
+version: post-ext-v1
 runtime: python27
 api_version: 1
 threadsafe: no
@@ -47,4 +47,4 @@ libraries:
   version: latest
 
 env_variables:
-  WHITELISTED_ORIGINS: r'^(http://localhost:8082)$'
+  WHITELISTED_ORIGINS: 'https?://.*\.google\.com|http://localhost:8082'

@@ -18,6 +18,7 @@ limitations under the License.
 __author__ = 'tomfitzgerald@google.com (Tom Fitzgerald)'
 
 import base64
+import logging
 import json
 import os
 import re
@@ -81,8 +82,13 @@ class SendBlob(webapp2.RequestHandler):
 
   def post(self):
     """Responds to POST requests."""
+    logging.info('-----')
     origin = self.request.headers.get('Origin', '')
+    logging.info(origin)
+    logging.info(WHITELISTED_ORIGINS)
+    logging.info(re.match(WHITELISTED_ORIGINS, origin))
     if not re.search(WHITELISTED_ORIGINS, origin):
+      logging.info('origin did not match %s' % origin)
       return
     template_values = {
       'data': self.request.get('data', '')
