@@ -58,6 +58,4 @@ class PunycodeDecode(object):
     Returns:
       Punycode decoded string.
     """
-    #if incoming_data.startswith('xn--'):
-    #  incoming_data = incoming_data[4:]
     return codecs.decode(incoming_data, 'idna')
