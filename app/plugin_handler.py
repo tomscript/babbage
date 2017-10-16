@@ -26,6 +26,7 @@ from plugins import rot13
 from plugins import strrev
 from plugins import url
 from plugins import xor
+from plugins import punycode
 
 AVAILABLE_PLUGINS = (base_64.Base64Decode(),
                      base_64.Base64Encode(),
@@ -39,7 +40,10 @@ AVAILABLE_PLUGINS = (base_64.Base64Decode(),
                      rot13.Rot13Encode(),
                      strrev.StrRev(),
                      xor.Xor(),
-                     xor.IncrementalXor())
+                     xor.IncrementalXor(),
+                     punycode.PunycodeDecode(),
+                     punycode.PunycodeEncode()
+                     )
 
 
 class Error(Exception):
