@@ -5,6 +5,8 @@
     "jasmine-core": "^2.8.0"
   },
   "devDependencies": {
+    "handlebars": "^4.0.0",
+    "semver": "^4.3.2",
     "closure-linter-wrapper": "^1.1.0",
     "grunt": "^1.0.1",
     "grunt-appengine": "^0.1.4",
