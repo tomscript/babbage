@@ -46,13 +46,13 @@ def Process(input_text, plugins):
 
   Returns:
     Dict of decoded data containing a success or failure.
-  """  
-  try:                    
-    response = plugin_handler.ProcessPlugins(input_text.encode('utf-8'), plugins)    
-  except plugin_handler.Error as e:    
+  """
+  try:
+    response = plugin_handler.ProcessPlugins(input_text.encode('utf-8'), plugins)
+  except plugin_handler.Error as e:
     return json.dumps({'failure': str(e)})
   return json.dumps({'success': response}, ensure_ascii=False)
-  
+
 
 class MainPoster(webapp2.RequestHandler):
   """Data was posted so we must be converting data. Pass to plugins."""
@@ -60,7 +60,7 @@ class MainPoster(webapp2.RequestHandler):
   def post(self):
     response = json.loads(self.request.body)
     if response.get('input') is None:
-      return            
+      return
     self.response.out.write(Process(response['input'], response['plugins']))
 
 
@@ -82,16 +82,11 @@ class SendBlob(webapp2.RequestHandler):
 
   def post(self):
     """Responds to POST requests."""
-    logging.info('-----')
     origin = self.request.headers.get('Origin', '')
-    logging.info(origin)
-    logging.info(WHITELISTED_ORIGINS)
-    logging.info(re.match(WHITELISTED_ORIGINS, origin))
     if not re.search(WHITELISTED_ORIGINS, origin):
-      logging.info('origin did not match %s' % origin)
       return
     template_values = {
-      'data': self.request.get('data', '')
+        'data': self.request.get('data', '')
     }
     self.response.headers.add_header('Access-Control-Allow-Origin', origin)
     self.response.headers.add_header('Access-Control-Allow-Credentials', 'true')

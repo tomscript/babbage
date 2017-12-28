@@ -1,6 +1,6 @@
 <div class="black-bg" ng-show="showHelp" ng-click="showHelp = false"></div>
 <div ng-show="showHelp" class="popup" ng-click="showHelp = false">
-  <h3>How's this work?</h3>
+  <h3>Help</h3>
   <ul>
     <li>Paste in text in the input text field.</li>
     <li>Select a plugin on the left by clicking its name.</li>
@@ -36,10 +36,6 @@
 
 <section>
   <div class="text-box" ng-class="{'no-output': !outputTextArea}">
-    <div class="nav-button nav-primary-button" ng-click="submitButtonClicked()"
-         ng-show="inputText || inputFile">
-      <span class="button-text light-button-text">convert</span>
-    </div>
     <div class="file-upload-holder" ng-hide="!showFileUpload">
       <div class="file-upload-inside">
         <input type="file" class="file-upload-input">
@@ -53,6 +49,10 @@
   </div>
 
   <nav ng-class="{'no-output-nav': !outputTextArea}">
+    <div class="nav-button nav-button-primary" ng-click="submitButtonClicked()"
+         ng-show="inputText || inputFile">
+      <span class="button-text light-button-text">convert</span>
+    </div>
     <div class="nav-button nav-button-secondary" ng-click="showFileUpload = true"
          title="Upload file">
       <img class="nav-button-img" src="images/upload.svg">

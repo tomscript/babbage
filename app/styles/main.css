@@ -197,7 +197,7 @@ header h1 {
   padding: 5px 20px;
 }
 
-.nav-button {  
+.nav-button {
   border-radius: 56px;
   bottom: 8px;
   box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
@@ -221,6 +221,13 @@ header h1 {
   top: 12px;
   width: 111px;
   z-index: 10;
+}
+
+.nav-button-primary {
+  background-color: #B71C1C;
+  border-radius: 5px;
+  padding: 0 1em;
+  width: initial;
 }
 
 .nav-button-img {
