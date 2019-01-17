@@ -27,6 +27,7 @@ from plugins import strrev
 from plugins import url
 from plugins import xor
 from plugins import punycode
+from plugins import json
 
 AVAILABLE_PLUGINS = (base_64.Base64Decode(),
                      base_64.Base64Encode(),
@@ -42,7 +43,8 @@ AVAILABLE_PLUGINS = (base_64.Base64Decode(),
                      xor.Xor(),
                      xor.IncrementalXor(),
                      punycode.PunycodeDecode(),
-                     punycode.PunycodeEncode()
+                     punycode.PunycodeEncode(),
+                     json.JsonPrettyPrint()
                      )
 
 
