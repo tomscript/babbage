@@ -22,6 +22,7 @@ import logging
 from plugins import base_64
 from plugins import fromcharcode
 from plugins import hex2ascii
+from plugins import punycode
 from plugins import replace
 from plugins import rot13
 from plugins import strrev
@@ -36,6 +37,8 @@ AVAILABLE_PLUGINS = (
   url.UrlEncode(),
   url.UrlDecode(),
   fromcharcode.FromCharCode(),
+  punycode.PunycodeEncode(),
+  punycode.PunycodeDecode(),
   replace.Replace(),
   rot13.Rot13Decode(),
   rot13.Rot13Encode(),
