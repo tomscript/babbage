@@ -1,0 +1,110 @@
+@mixin md-icon-size($size: 24px) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+}
+
+.flex {
+  display: flex;
+}
+
+mat-sidenav {
+  background-color: #fafafa;
+}
+
+.bottom-buttons {
+  button {
+    margin-right: 0.5em;
+  }
+}
+
+.add-plugin {
+  color: gray;
+  mat-icon {
+    margin: auto;
+  }
+}
+
+.plugin {
+  display: flex;
+  border-bottom: solid 1px lightgray;
+  padding: 0.75em;
+
+  .plugin-body {
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+
+    strong {
+      margin: auto 0;
+    }
+    .plugin-button {
+      &:hover {
+        text-decoration: underline;
+      }
+      flex: 1 1;
+      cursor: pointer;
+      text-align: left;
+      font-size: 0.8em;
+    }
+  }
+
+  .options {
+    margin-top: 0.5em;
+    width: 100%;
+    .option {
+      padding: 0.25em;
+      border-radius: 5px;
+      border: solid 1px lightgray;
+      margin-bottom: 0.25em;
+      line-height: 18px;
+      width: 100%;
+    }
+
+    .mat-form-field {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+  }
+}
+
+.centered {
+  margin: auto 0;
+}
+
+.plugins {
+  min-width: 250px;
+  max-width: 250px;
+}
+
+.add-button {
+  color: darkgray;
+  cursor: pointer;
+  mat-icon {
+    @include md-icon-size(16px);
+  }
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0.5em 1em;
+}
+
+.boring {
+  color: darkgray;
+}
+
+.selected-plugins {
+  display: flex;
+  margin: 1em 0;
+
+  strong {
+    margin: auto 1em auto 0;
+  }
+
+  mat-chip-list {
+    margin: auto 0;
+  }
+}
