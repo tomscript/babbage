@@ -18,6 +18,7 @@ limitations under the License.
 __author__ = 'tomfitzgerald@google.com (Tom Fitzgerald)'
 
 import base64
+import logging
 import json
 import os
 import re
@@ -102,7 +103,7 @@ class SendBlob(webapp2.RequestHandler):
     if not re.search(WHITELISTED_ORIGINS, origin):
       return
     template_values = {
-      'data': self.request.get('data', '')
+        'data': self.request.get('data', '')
     }
     self.response.headers.add_header('Access-Control-Allow-Origin', origin)
     self.response.headers.add_header('Access-Control-Allow-Credentials', 'true')

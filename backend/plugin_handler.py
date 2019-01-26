@@ -27,6 +27,7 @@ from plugins import rot13
 from plugins import strrev
 from plugins import url
 from plugins import xor
+from plugins import punycode
 
 AVAILABLE_PLUGINS = (
   base_64.Base64Decode(),
