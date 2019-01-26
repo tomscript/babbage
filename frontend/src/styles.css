@@ -1,0 +1,13 @@
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fafafa;
+  font-family: 'Roboto', sans-serif;
+}

@@ -1,0 +1,58 @@
+<mat-toolbar color="primary"> <span>Babbage</span> </mat-toolbar>
+
+<div class="flex">
+  <div class="plugins">
+    <div *ngFor="let plugin of plugins" class="plugin">
+      <div class="plugin-body">
+        <div class="flex">
+          <span class="plugin-button" (click)="add(plugin)">{{ plugin.name }}</span>
+          <div (click)="add(plugin)" class="flex add-button"><mat-icon>add</mat-icon></div>
+        </div>
+        <div class="options" *ngIf="plugin.optionsDesc.length > 0">
+          <div *ngFor="let option of plugin.optionsDesc; let i = index">
+            <input
+              type="text"
+              class="option"
+              placeholder="{{ option }}"
+              [(ngModel)]="plugin.options[i]"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="inputs">
+    <div *ngIf="selectedPlugins.length > 0" class="selected-plugins">
+      <mat-chip-list>
+        <mat-chip class="boring">Input</mat-chip>
+        <mat-icon class="boring">arrow_forward</mat-icon>
+        <div *ngFor="let plugin of selectedPlugins" class="flex centered">
+          <mat-chip (click)="remove(plugin)">{{ plugin.name }} {{ plugin.options }}</mat-chip>
+          <mat-icon class="centered boring">arrow_forward</mat-icon>
+        </div>
+        <mat-chip class="boring">Output</mat-chip>
+      </mat-chip-list>
+    </div>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Input" [(ngModel)]="model.input"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        matTextareaAutosize
+        placeholder="Output"
+        [cdkAutosizeMinRows]="20"
+        [(ngModel)]="model.output"
+      ></textarea>
+    </mat-form-field>
+
+    <div class="bottom-buttons">
+      <button mat-button (click)="convert()" [disabled]="!model.input" color="primary">
+        Convert
+      </button>
+      <button mat-button (click)="model.input = ''; selectedPlugins = []">Clear</button>
+    </div>
+  </div>
+</div>

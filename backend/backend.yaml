@@ -1,0 +1,29 @@
+service: backend
+runtime: python27
+api_version: 1
+threadsafe: no
+
+inbound_services:
+  - xmpp_subscribe
+
+handlers:
+  - url: /convert
+    script: main.app
+    secure: always
+
+  - url: /listplugins
+    script: main.app
+    secure: always
+
+libraries:
+  - name: webapp2
+    version: latest
+
+  - name: ssl
+    version: latest
+
+  - name: jinja2
+    version: latest
+
+env_variables:
+  WHITELISTED_ORIGINS: r'^(http://localhost:.*|https://.*\.appspot\/com|https://.*\.google\.com)$'
