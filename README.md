@@ -1,6 +1,6 @@
 Babbage is a simple and extensible open source tool for manipulating data.
 
-_Currently migrating to a more modern stack. Take a look at [early progress](https://frontend-dot-babbage-stable.appspot)._
+_Currently migrating to a more modern stack. Take a look at [early progress](https://frontend-dot-babbage-stable.appspot.com)._
 
 Few TODOs that need to be finished:
 

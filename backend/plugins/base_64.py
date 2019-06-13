@@ -59,3 +59,45 @@ class Base64Decode(object):
     """
     missing_padding = 4 - len(incoming_data) % 4
     return base64.b64decode(incoming_data + '=' * missing_padding)
+
+class UrlSafeBase64Encode(object):
+
+  def __init__(self):
+    self.name = 'URL-safe Base 64 encode'
+    self.description = 'Returns a URL-safe base 64 encoded string.'
+    self.options = 0
+
+  def Process(self, incoming_data, unused_options):
+    """URL-safe base64 encoding.
+    Substitutes - instead of + and _ instead of / in the standard Base64 alphabet.
+
+    Args:
+      incoming_data: String of data to process.
+      unused_options: Not used.
+
+    Returns:
+      URL-safe Base64 encoded string.
+    """
+    return base64.urlsafe_b64encode(incoming_data)
+
+
+class UrlSafeBase64Decode(object):
+
+  def __init__(self):
+    self.name = 'URL-safe Base 64 decode'
+    self.description = 'Returns a url-safe base 64 decoded string.'
+    self.options = 0
+
+  def Process(self, incoming_data, unused_options):
+    """URL-safe base64 decode, accepting strings with omitted padding.
+    Substitutes - instead of + and _ instead of / in the standard Base64 alphabet.
+
+    Args:
+      incoming_data: String of data to process, with or without padding.
+      unused_options: Not used.
+
+    Returns:
+      URL-safe Base64 decoded string.
+    """
+    missing_padding = 4 - len(incoming_data) % 4
+    return base64.urlsafe_b64decode(incoming_data + '=' * missing_padding)
