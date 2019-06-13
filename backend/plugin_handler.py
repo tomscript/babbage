@@ -33,6 +33,8 @@ from plugins import punycode
 AVAILABLE_PLUGINS = (
   base_64.Base64Decode(),
   base_64.Base64Encode(),
+  base_64.UrlSafeBase64Decode(),
+  base_64.UrlSafeBase64Encode(),
   hex2ascii.Hex2Ascii(),
   url.UrlEncode(),
   url.UrlDecode(),

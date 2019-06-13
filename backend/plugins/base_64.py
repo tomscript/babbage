@@ -65,7 +65,7 @@ class UrlSafeBase64Encode(object):
   def __init__(self):
     self.name = 'URL-safe Base 64 encode'
     self.description = 'Returns a URL-safe base 64 encoded string.'
-    self.options = 0
+    self.options = []
 
   def Process(self, incoming_data, unused_options):
     """URL-safe base64 encoding.
@@ -86,7 +86,7 @@ class UrlSafeBase64Decode(object):
   def __init__(self):
     self.name = 'URL-safe Base 64 decode'
     self.description = 'Returns a url-safe base 64 decoded string.'
-    self.options = 0
+    self.options = []
 
   def Process(self, incoming_data, unused_options):
     """URL-safe base64 decode, accepting strings with omitted padding.
