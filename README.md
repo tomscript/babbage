@@ -11,7 +11,7 @@ Few TODOs that need to be finished:
 
 ### Use it:
 
-- https://babbage-stable.appspot.com
+- https://babbage.codes
 
 ### Code:
 
