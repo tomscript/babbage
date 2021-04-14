@@ -1,5 +1,3 @@
-Babbage is a simple and extensible open source tool for manipulating data.
+## Deprecated
 
-### Use it:
-
-- https://babbage.codes/
+Babbage is deprecated. Recommend you use https://gchq.github.io/CyberChef/ instead.
